@@ -52,6 +52,19 @@ button.request-button{
   font-weight: bold;
 }
 
+.image-figure {
+  height: 250px;
+  width: 250px;
+  background-position: center;
+  background-size: cover;
+}
+
+div.card-image {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
 @media only screen and (max-width: 768px) {
   .bath-image{
     margin: 0px;

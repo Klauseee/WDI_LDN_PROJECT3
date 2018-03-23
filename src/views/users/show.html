@@ -49,7 +49,7 @@
       <h1 class="title is-4">Your Own Requests</h1>
       <div class="requests" ng-repeat="request in usersShow.user.requests">
         <a ui-sref="bathroomsShow({ id: request._id })"><p>Name: {{ request.name }}</p></a>
-        <img class="small-image" ng-src="{{ request.image }}" alt="toilet" />
+        <!-- <img class="small-image" ng-src="{{ request.image }}" alt="toilet" /> -->
 
         <p>Address: {{ request.address }}</p>
         <p>Status: {{ request.requests[0].status }}</strong></p>

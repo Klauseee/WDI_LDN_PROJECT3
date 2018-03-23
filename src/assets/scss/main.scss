@@ -21,19 +21,25 @@ body{
 }
 .navbar-brand {
   background-color: #ceeff6;
+  font-family: 'Poppins', sans-serif;
+
 }
 .navbar-menu {
   background-color: #ceeff6;
+  font-family: 'Poppins', sans-serif;
   // box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
   // padding: 0.5rem 0;
 
 }
 
 .navbar-item {
+  font-family: 'Poppins', sans-serif;
+
   // box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);r
 }
 
 .navbar-menu.is-active {
+  font-family: 'Poppins', sans-serif;
   background-color: #ceeff6;
   display: block;
   // height: 180px;

@@ -5,10 +5,13 @@ function UsersShowCtrl(Bathroom, User, $state, $auth, $location, $anchorScroll) 
   vm.user.requests = [];
   vm.newRating = null;
 
+
+  //find any requests made by current user, the bathroom they requested and the status of the request.
   Bathroom.find()
     .then(res => {
       res.data.forEach(bathroom => {
         //find all bathrooms, check if they have any requests and if the request is owned by the current user
+        //find if there are any requests and if that request matches the user's payload
         if(bathroom.requests[0] && bathroom.requests[0].user === $auth.getPayload().sub) {
           vm.user.requests.push(bathroom);
         }
@@ -16,6 +19,7 @@ function UsersShowCtrl(Bathroom, User, $state, $auth, $location, $anchorScroll) 
     });
 
   function getUserData() {
+    //When a user clicks on the link for their profile page, their ID is passed into thr findById function using $auth. This holds the current user's ID in the jsonwebtoken which is available while anyone is logged in.
     User.findById($auth.getPayload().sub)
       .then(res => {
         vm.user = res.data;
@@ -23,8 +27,9 @@ function UsersShowCtrl(Bathroom, User, $state, $auth, $location, $anchorScroll) 
       });
   }
 
+  //search all users to see if they have used the current user's bathroom
   function findPreviousUsers() {
-    User.find()
+    User.find() //returns all users in database
       .then(res => {
         //filter all users to check if their id matches those in the current user's previous users
         vm.user.previousUsersObject = res.data.filter(user => vm.user.previousUsers.includes(user._id));
@@ -32,7 +37,7 @@ function UsersShowCtrl(Bathroom, User, $state, $auth, $location, $anchorScroll) 
   }
 
   function acceptRequest(bathroom, request) {
-    bathroom.isAvailable = true;
+    bathroom.isAvailable = true; //users can now request the bathroom again
     bathroom.previousUsers.push(request.user._id); // add the user into the bathroom's previous users array
     vm.user.previousUsers.push(request.user._id); // add the user into the bathroom owner's previous users array
     Bathroom.update(bathroom)
@@ -45,6 +50,7 @@ function UsersShowCtrl(Bathroom, User, $state, $auth, $location, $anchorScroll) 
   }
 
   function rejectRequest(bathroom, request) {
+    bathroom.isAvailable = true; //users can now request the bathroom again
     Bathroom.rejectRequest(bathroom, request)
       .then(() => request.status = 'rejected');
   }

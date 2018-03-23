@@ -21,7 +21,7 @@ function BathroomsShowCtrl(Bathroom, User, $state, $auth) {
       });
   }
 
-
+  //if someone is logged in find their information. If they are in the previous users array that allows them to comment on the bathroom. It links to the HTML in the show page
   if($auth.getPayload()){
     User.findById($auth.getPayload().sub)
       .then(res =>  {
