@@ -13,8 +13,26 @@ div.your-profile {
 
   }
 }
-div.user-requests-styling{
-  margin-bottom: 10px;
+.userShow {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  margin: 0;
+
+div.card {
+  padding: 30px;
+}
+.requests {
+  padding: 10px;
+}
+
+.small-image {
+  width: 200px;
+}
+
+.fa-pencil-alt {
+  padding-right: 3px;
+}
 }
 
 p.user-rating-styling{

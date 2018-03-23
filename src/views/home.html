@@ -1,4 +1,5 @@
 <div id="scrollArea" class="home" ng-controller="HomeCtrl as home">
+  <div class="title is-4">For when you need the loo</div>
 
   <div class="buttons">
     <button class="button" ng-click="home.homeLogin()" ng-if="!home.isAuthenticated()">Login</button>
@@ -13,10 +14,9 @@
 </div>
 <div ng-controller="HomeCtrl as home" class="aboutSection">
   <a class="title" ng-click="home.toggleAbout()">About</a>
-  <a class="title" ng-click="home.gotoAbout()">click me</a>
+  <!-- <a class="title" ng-click="home.gotoAbout()">click me</a> -->
 
-  <div ng-class="{ 'is-active': !home.aboutIsActive }">
-    <p>Lorem Khaled Ipsum is a major key to success. The key to success is to keep your head above the water, never give up. Give thanks to the most high. How’s business? Boomin. Mogul talk. We don’t see them, we will never see them. The key to success is to keep your head above the water, never give up. Give thanks to the most high. We don’t see them, we will never see them. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I’m never giving up, I’m just getting started. The first of the month is coming, we have to get money, we have no choice. It cost money to eat and they don’t want you to eat.</p>
-    <p class="about" id="about">jess</p>
+  <div ng-class="{ 'is-active-about': !home.aboutIsActive }">
+    <p class="about" id="about">Lorem Khaled Ipsum is a major key to success. The key to success is to keep your head above the water, never give up. Give thanks to the most high. How’s business? Boomin. Mogul talk. We don’t see them, we will never see them. The key to success is to keep your head above the water, never give up. Give thanks to the most high. We don’t see them, we will never see them. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I’m never giving up, I’m just getting started. The first of the month is coming, we have to get money, we have no choice. It cost money to eat and they don’t want you to eat.</p>
   </div>
 </div>

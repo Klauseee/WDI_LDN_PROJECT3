@@ -9,8 +9,8 @@ function AuthLoginCtrl(User, $auth, $state, $rootScope){
     $auth.authenticate(provider)
       .then(()=> {
         $rootScope.$broadcast('flashMessage', {
-          type: 'success',
-          content: 'We\'ve hacked your facebook!'
+          type: 'info',
+          content: 'You\'ve successfully logged in with Facebook'
         });
         $state.go('bathroomsMapIndex');
       })
@@ -22,7 +22,7 @@ function AuthLoginCtrl(User, $auth, $state, $rootScope){
     $auth.login(vm.credentials)
       .then(res => {
         $rootScope.$broadcast('flashMessage', {
-          type: 'success',
+          type: 'info',
           content: res.data.message
         });
         $state.go('bathroomsMapIndex');
@@ -33,8 +33,8 @@ function AuthLoginCtrl(User, $auth, $state, $rootScope){
       })
       .catch(() => {
         $rootScope.$broadcast('flashMessage', {
-          type: 'error',
-          content: 'Silly! Incorrect email or password!'
+          type: 'info',
+          content: 'Incorrect email or password!'
         });
         $state.go('login');
       });

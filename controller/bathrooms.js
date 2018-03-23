@@ -22,6 +22,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next){
   Bathroom.findById(req.params.id)
     .populate('comments.user')
+    .populate('user')
     .then(bathroom => res.json(bathroom))
     .catch(next);
 }

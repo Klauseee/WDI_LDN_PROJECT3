@@ -20,7 +20,6 @@ function UsersShowCtrl(Bathroom, User, $state, $auth, $location, $anchorScroll) 
       .then(res => {
         vm.user = res.data;
         findPreviousUsers();
-        console.log(vm.user);
       });
   }
 

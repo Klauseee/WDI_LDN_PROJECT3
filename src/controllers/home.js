@@ -22,12 +22,6 @@ function HomeCtrl($state, $location, $anchorScroll, $scope, $auth){
 
   function toggleAbout() {
     this.aboutIsActive = !this.aboutIsActive;
-    // if(this.aboutIsActive) {
-    // $location.hash('about');
-    // //   // call $anchorScroll()
-    // $anchorScroll();
-    //
-    // }
     gotoAbout();
   }
 

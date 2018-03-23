@@ -1,4 +1,4 @@
-<section id="section" class="section">
+<section id="section" class="section userShow">
   <div class="container">
     <div class="card your-profile">
       <div class="card-content">
@@ -10,10 +10,9 @@
               <li>Email: {{usersShow.user.email}}</li>
               <li>Username: {{usersShow.user.username}}</li>
             </ul>
-          </div>
-          <div class="column is-half-desktop is-half-tablet is-full-mobile profile-top">
             <a ui-sref="usersEdit({ id: usersShow.user._id })" class="button"><i class="fas fa-pencil-alt"></i> Edit</a>
           </div>
+
           <figure class="image column is-half-desktop">
             <img ng-src="{{ usersShow.user.image }}" alt="{{ usersShow.user.name }}" />
           </figure>
@@ -44,23 +43,24 @@
           </div>
         </div>
       </div>
-      <div class="card-content">
-        <a ng-click="usersShow.gotoTop()"><i class="fas fa-angle-double-up"></i>Go back to top</a>
-      </div>
     </div>
-    <br>
+
     <div class="card" ng-if="usersShow.user.requests.length > 0">
       <h1 class="title is-4">Your Own Requests</h1>
-      <div ng-repeat="request in usersShow.user.requests">
-        <a ui-sref="bathroomsShow({ id: request._id })"><p>{{ request.address }} {{ request.requests[0].status }}</strong></p></a>
+      <div class="requests" ng-repeat="request in usersShow.user.requests">
+        <a ui-sref="bathroomsShow({ id: request._id })"><p>Name: {{ request.name }}</p></a>
+        <img class="small-image" ng-src="{{ request.image }}" alt="toilet" />
+
+        <p>Address: {{ request.address }}</p>
+        <p>Status: {{ request.requests[0].status }}</strong></p>
       </div>
     </div>
     <div class="card" ng-if="usersShow.user.previousUsersObject.length > 0">
       <div class="card-content">
         <h1 class="title is-4">Rate your users</h1>
         <div ng-repeat="user in usersShow.user.previousUsersObject">
-          <p>{{ user.firstName }}</p>
-          <p>{{ user.lastName }}</p>
+          <p>First Name: {{ user.firstName }}</p>
+          <p>Last Name: {{ user.lastName }}</p>
           <form ng-submit="usersShow.handleComment(user._id)">
             <div class="field">
               <label for="name">Rating</label>
@@ -85,6 +85,5 @@
     <div class="card-content">
       <a ng-click="usersShow.gotoTop()"><i class="fas fa-angle-double-up"></i>Go back to top</a>
     </div>
-  </div>
   </div>
 </section>
