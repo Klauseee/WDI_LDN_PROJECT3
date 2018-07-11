@@ -66,6 +66,7 @@ function UsersShowCtrl(Bathroom, User, $state, $auth, $location, $anchorScroll) 
       });
     vm.user.previousUsers.splice(id, 1); //removes the user's id from the owner's previous users so that only one rating can be made
     User.update(vm.user);
+    console.log(vm.user);
   }
 
 

@@ -20,7 +20,7 @@ const bathroomData = {
 
 let bathroomId;
 
-describe('GET /places/:id', ()=> {
+describe('GET /bathoom/:id', ()=> {
   beforeEach(done => {
     Bathroom.remove({})
       .then(() => Bathroom.create(bathroomData))
