@@ -1,37 +1,51 @@
 ![image](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
-# WDI-32 Group Project - PooberApp
+# WDI-32 Group Project - Poober
 
-![image](src/assets/images/logo.png)
+You're stuck in the middle of London, it's Nottinghill Carnival and you need to use a restroom. All the pubs are full and there's no where to go. That's where Poober comes in. A web app designed for people to be able to register, login and request a bathroom that someone has kindly offered on the site.
 
-We've all been in that situation before... You're out and about in town, and you need to use the bathroom, badly. There aren't any public toilets nearby (that wouldn't give you diseases) and you're too British to go into a restaurant and ask if you can use theirs.
-But there are literally thousands of nearby private toilets that could cater for your needs.
+Poober is a mobile-responsive MEAN stack single-page application, styled using the Bulma CSS framework, as well has using jsonwebtoken and satellizer. We also used Google Map's API to help locate the bathrooms. It is tested using Mocha, Chai and supertest.
 
-Enter Poober!
+##### [Visit website](https://poober.herokuapp.com/)
 
-Poober brings together bathroom owners looking for some good karma and people stranded without the correct facilities.
+*Please be aware that Heroku apps go to sleep after 30 mins of inactivity and may take a little time to load*
 
-The app allows users to search the area they are in to find privately owned bathrooms that are being offered and request to use it.
+---
 
-Our app is a mobile-first responsive MEAN stack application styled using BULMA CSS framework, featuring packages such as sattelizer, jsonwebtoken, filestack, ngMessages. We used Google Maps API and Google Places API.
-We also wrote a testing suite using NYC and mocha.
+###### The planning phase of the project began with the creation of a Trello board, specifying our MVP requirements and desired features. Tasks were assigned to members of the group throughout the project using this system.
 
-##### [Visit Website](https://poober.herokuapp.com)
+<p align="center"><img src="https://i.imgur.com/FswHhb1.png" width="700"></p>
 
-Throughout the project we used trello to organise and designate tasks and responsibilities. Initially we specified our MVP requirements before listing our desired features in order of importance.
+######  Once logged in the user is sent to a page which displays all the bathrooms in your surrounding area, pinpointing your location. The user can filter them by rating and what they wish to use the restroom for. However, if the user wishes to view the bathrooms in a list they are able to do so.
 
-trello image
+<p align="center"><img src="https://i.imgur.com/AtWWecN.png" width="700"></p>
 
-Each morning our group met for a standup to discuss any problems and what we had done since our last meeting and to designate new tasks where necessary. Normally we would do this at least twice a day.
+<p align="center"><img src="https://i.imgur.com/uceRhLN.png" width="700"></p>
 
-We knew from the start that this app was mainly intended for mobile users, so we set out to make the app as simple as possible for someone to use on a mobile device. Users can see all available bathrooms as markers on map, when they click a marker, it takes them to a show page for the bathroom which lists the available facilities, and provides directions from the user's current location.
+###### Once logged in and the user has found a suitable bathroom that suits their needs they are able to send a request to the user provided that it's available.
 
-The app works with a simple request and accept principle: the user decides which toilet they would like to use and hits the request button (only one request can be made per bathroom at a time). The owner of the bathroom can then either accept or reject the request and the bathroom again becomes available to other users.
+<p align="center"><img src="https://i.imgur.com/77dfgCR.png" width="700"></p>
 
-The user can also filter the bathrooms for specific facilities that are offered and by the minimum average rating.
+###### Next, the owner of the bathroom can see all the requests on their profile page and can accept or decline them. Once the owner has accepted or declined it shows on the requestee's user page.
 
-Once a request has been accepted, the user can leave a comment and a rating on the bathroom (one for each visit) and the owner of the bathroom can rate the user. The user ratings appear to the owner every time a request is made.
+<p align="center"><img src="https://i.imgur.com/PJFMP9Z.png" width="700"></p>
 
-All users have the option of listing their own bathroom on the app.
+<p align="center"><img src="https://i.imgur.com/Bg3ncd2.png" width="700"></p>
 
-We are extremely pleased with the final product. The app works as intended...
+###### Finally, the requestee can rate the bathroom which will calculate the average rating of the bathroom. Also, the owner can rate the requestee.
+
+<p align="center"><img src="https://i.imgur.com/ual7gvF.png" width="700"></p>
+
+<p align="center"><img src="https://i.imgur.com/9R3GBhS.png" width="700"></p>
+
+###### Our application is thoroughly tested using Mocha and Chai.
+
+<p align="center"><img src="https://i.imgur.com/UaOvh9t.png" width="700"></p>
+
+---
+
+We are very pleased with the outcome of the project, having got to grips with new technologies and produced a fully authenticated, functional and genuinely useful application. It also provided a great learning experience of coding in a team and managing version control.
+
+We have a number of ideas to further develop the application, including:
+- The app knowing where you are at all times once the request is made so the owner can see your location.
+- Sending the user and owner a notifcation via text message once a request has been sent, accepted or declined
